@@ -1,0 +1,131 @@
+html {
+    background-color: #152733;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    padding-top: 50px;
+    color: #f8f9fa;
+}
+
+label {
+    margin-left: 5px;
+    color: #f8f9fa;
+}
+
+table {
+    width: 800px;
+    margin-top: 50px;
+    /* border: 1px solid #343a40; */
+    border-collapse: collapse;
+    font-size: 18px;
+}
+  
+th,
+td {
+    /* border: 1px solid #343a40; */
+    padding: 16px 24px;
+    text-align: left;
+}
+
+tr:hover td {
+    background:#cdcdcd;
+    cursor: pointer;
+}
+
+thead th {
+    background-color: #087f5b;
+    color: #fff;
+    width: 25%;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #e9ecef;
+}
+
+#from, #to, #date, #time {
+    height: 25px;
+    font-size: 14px;
+}
+
+input[type="submit"]{
+    background-color: #6C757D;
+    outline: none;
+    border: 0px;
+    box-shadow: none;
+    color: #e9ecef;
+    text-decoration: none;
+    display: inline;
+    padding: 10px;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active{
+    background-color: #495056;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none;
+}
+
+.btn-primary{
+    background-color: #6C757D;
+    outline: none;
+    border: 0px;
+    box-shadow: none;
+    color: #e9ecef;
+    text-decoration: none;
+    display: inline;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+    background-color: #495056;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+  
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background: #ddd;
+    color: black;
+}
+  
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
