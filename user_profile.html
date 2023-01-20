@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+ <html>
+    <head>
+      <title>Carpool: All Offers</title>
+    </head>
+   <body>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/profile.css') }}">
+        <div class="topnav">
+            <a href={{ url_for('index') }}>Home</a>
+            <a href={{ url_for('get_all_offers') }}>All Offers</a>
+            <a href={{ url_for('get_all_requests') }}>All Requests</a>
+            <a href={{ url_for('logout') }}>Log Out</a>
+        </div>
+        {% if user %}
+          <div class="card">
+              <h1>{{ user.username }}</h1>
+              <p class="title">{{ user.email }}</p>
+              <p>Age: {{ user.age }}</p>
+              <p>Gender: {{ user.gender }}</p>
+              <p>Major: {{ user.major }}</p>
+              <p>Favorite Line: {{ user.bestline }}</p>
+          </div>
+        {% endif %}
+        <button onclick="goBack()">Go Back</button>
+
+        <script type="text/javascript" >
+          function goBack() {
+            window.history.back();
+          }
+         </script>
+   </body>
+ </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+ <html>
+    <head>
+      <title>Carpool: All Offers</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="{{ url_for('static',filename='script.js') }}"></script>
+    </head>
+   <body>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/all_rides.css') }}">
+                
+        <div class="topnav">
+            <a href={{ url_for('index') }}>Home</a>
+            <a class="active" href={{ url_for('get_all_offers') }}>All Offers</a>
+            <a href={{ url_for('get_all_requests') }}>All Requests</a>
+            <a href={{ url_for('create_offer') }}>Create Offer</a>
+            <a href={{ url_for('create_request') }}>Create Request</a>
+            <a href={{ url_for('logout') }}>Log Out</a>
+        </div>
+
+        <h1>All Offers</h1>
+        <form action={{ url_for('get_all_offers') }} method="get">
+            <br>
+            <label for="from">From:</label>
+            <input type="text" name="from" id="from" placeholder="Yale">
+
+            <label for="to">To:</label>
+            <input type="text" name="to" id="to" placeholder="BDL">
+
+            <label for="date">Date:</label>
+            <input type="date" name="date" id="date">
+
+            <label for="time">Time:</label>
+            <input type="time" name="time" id="time">
+
+            <input type="submit" value="Search">
+            <br>
+        </form>
+
+        <table id="all_offers">
+            <thead>
+            <tr>
+                <th> User</th>
+                <th> Departure</th>
+                <th> Destination</th>
+                <th> Time</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for offer in offers: %}
+            <tr>
+                <td> {{offer.user_id}} </td>
+                <td> {{offer.departure}} </td>
+                <td> {{offer.destination}} </td>
+                <td> {{offer.date_time}} </td>
+            </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+   </body>
+ </html>
